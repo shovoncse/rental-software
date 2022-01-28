@@ -5,23 +5,25 @@ import throttle from 'lodash.throttle';
 import reportWebVitals from 'reportWebVitals';
 
 // Tailwind's Compiled output
-import 'styles/output.css'
+import 'styles/output.css';
 // Ant Design
-import "antd/dist/antd.css";
+import 'antd/dist/antd.css';
 // My Custom Css
-import "assets/css/style.css";
+import 'assets/css/style.css';
 
 // App component
 import App from 'App';
 // Local Storage Utility
-import { saveState } from 'utils/localStorage'
+import { saveState } from 'utils/localStorage';
 // Redux Store
 import { store } from 'store/';
 
 // Subscribe to the store
-store.subscribe(throttle(() => {
-  saveState(store.getState());
-}, 1000));
+store.subscribe(
+  throttle(() => {
+    saveState(store.getState());
+  }, 1000)
+);
 
 ReactDOM.render(
   <React.StrictMode>
