@@ -1,3 +1,4 @@
+import React from 'react';
 const Footer = ({credit}) => {
     return (
         <>
@@ -8,4 +9,4 @@ const Footer = ({credit}) => {
     )
 }
 
-export default Footer
+export default Footer;
