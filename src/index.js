@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import throttle from 'lodash.throttle';
+import reportWebVitals from 'reportWebVitals';
 
 // Tailwind's Compiled output
 import 'styles/output.css'
