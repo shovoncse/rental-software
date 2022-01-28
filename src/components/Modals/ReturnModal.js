@@ -21,7 +21,7 @@ const ReturnModal = ({ visible, setReturnModal, setConfirmModal }) => {
       returnForm.resetFields();
       dispatch({ type: 'products/resetSelected' });
     }
-  }, [visible]);
+  }, [visible, returnForm, dispatch]);
 
   // getProductById
   const getBookingProductById = (code) => {
@@ -105,14 +105,14 @@ const ReturnModal = ({ visible, setReturnModal, setConfirmModal }) => {
           <Col span={12}>
             {selected ? (
               <List size="small" bordered className="bg-sky-100">
-                <List.Item>
+                <List.Item key={1}>
                   <span className="font-bold">{selected.name}</span>
                 </List.Item>
-                <List.Item>
+                <List.Item key={2}>
                   <span className="font-bold">Bookd for:</span>{' '}
                   {selected.bookingsDays} Days
                 </List.Item>
-                <List.Item>
+                <List.Item key={3}>
                   <span className="font-bold">Period:</span>{' '}
                   {selected.bookingsDates
                     ? moment(selected.bookingsDates[0]).format('l') +
@@ -120,7 +120,7 @@ const ReturnModal = ({ visible, setReturnModal, setConfirmModal }) => {
                       moment(selected.bookingsDates[1]).format('l')
                     : 'Not Found'}
                 </List.Item>
-                <List.Item>
+                <List.Item key={4}>
                   <span className="font-bold">Mileage:</span>{' '}
                   {selected.mileage || 0}
                 </List.Item>

@@ -39,7 +39,7 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
       bookForm.resetFields();
       dispatch({ type: 'products/resetSelected' });
     }
-  }, [visible]);
+  }, [visible, bookForm, dispatch]);
 
   // getProductById
   const getProductById = (code) => {
@@ -131,17 +131,17 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
           <Col span={10}>
             {selected ? (
               <List size="small" bordered className="bg-sky-100">
-                <List.Item>
+                <List.Item key={1}>
                   <span className="text-sm font-bold">{selected.name}</span>
                 </List.Item>
-                <List.Item>
+                <List.Item key={2}>
                   <span className="font-semibold">Mileage:</span>{' '}
                   {selected.mileage || '0'}
                 </List.Item>
-                <List.Item>
+                <List.Item key={3}>
                   <span className="font-semibold">Price:</span> {selected.price}
                 </List.Item>
-                <List.Item>
+                <List.Item key={4}>
                   <span className="font-semibold">Min Rent:</span> For{' '}
                   <span className="font-bold">
                     {selected.minimum_rent_period}

@@ -5,5 +5,5 @@ export default function ProductUpdate(date) {
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: 'products/updateProducts', payload: { date } });
-  }, [date]);
+  }, [date, dispatch]);
 }

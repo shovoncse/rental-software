@@ -19,7 +19,6 @@ const productsSlice = createSlice({
     // Get Single Product
     getProductById: (state, action) => {
       let { id } = action.payload;
-      console.log(id);
       let selected = state.products.find((item) => item.code === id);
       state.selected = selected;
     },
