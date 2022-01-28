@@ -4,17 +4,18 @@ import { Modal } from 'antd';
 import Swal from 'sweetalert2';
 
 const BookConfirmModal = ({ visible, setBookModal, setConfirmModal }) => {
+  // Previously selected product
   let selected = useSelector((state) => state.products.selected) || '';
-
+  // Action dispatcher
   let dispatch = useDispatch();
 
+  // Booking Function
   const handleBookConfirm = () => {
-    // insert to booked
-
-    // update availability
+    // Booking Action
     dispatch({ type: 'products/productBooking' });
-
+    // Alert
     Swal.fire('Sucessfull', 'Your booking is successfull', 'success');
+    // Modals Hide
     setConfirmModal(false);
     setBookModal(false);
   };

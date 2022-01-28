@@ -20,7 +20,7 @@ const Products = () => {
   const [returnConfirmModalVisible, setReturnConfirmModalVisible] =
     useState(false);
 
-  const date = moment();
+  const date = moment().format('l');
   ProductUpdate(date);
 
   return (

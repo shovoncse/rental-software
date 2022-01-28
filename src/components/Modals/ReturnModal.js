@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Modal, Select, Form, List, InputNumber } from 'antd';
-import moment from 'moment';
 
 const ReturnModal = ({ visible, setReturnModal, setConfirmModal }) => {
   let dispatch = useDispatch();
@@ -115,9 +114,9 @@ const ReturnModal = ({ visible, setReturnModal, setConfirmModal }) => {
                 <List.Item key={3}>
                   <span className="font-bold">Period:</span>{' '}
                   {selected.bookingsDates
-                    ? moment(selected.bookingsDates[0]).format('l') +
-                      '-' +
-                      moment(selected.bookingsDates[1]).format('l')
+                    ? selected.bookingsDates[0] +
+                      ' to ' +
+                      selected.bookingsDates[1]
                     : 'Not Found'}
                 </List.Item>
                 <List.Item key={4}>

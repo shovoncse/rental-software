@@ -1,3 +1,23 @@
+/*
+/*
+@File: Rental Software Styles
+* This file contains the styling for the project.
+This files table contents are outlined below
+*
+*/
+
+
+/*================================================
+Default CSS
+=================================================*/
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/*================================================
+Custom CSS
+=================================================*/
 .ant-table-content {
     overflow: scroll;
 }

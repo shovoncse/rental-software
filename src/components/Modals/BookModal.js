@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 
 const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
   let dispatch = useDispatch();
+  // Select from state
   let products = useSelector((state) => state.products.products);
   let selected = useSelector((state) => state.products.selected) || '';
 
@@ -13,16 +14,23 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
   const { RangePicker } = DatePicker;
   const [bookForm] = Form.useForm();
 
+  // Click to OK button
   const handleBookOk = ({ product, date }) => {
     const a = moment(date[0]);
     const b = moment(date[1]);
+
+    let bookDates = [];
+    bookDates.push(moment(date[0]).format('l'));
+    bookDates.push(moment(date[1]).format('l'));
+
     const days = Math.abs(a.diff(b, 'days'));
 
+    // Validate min Rent period
     if (selected.minimum_rent_period <= days) {
       dispatch({ type: 'products/getProductById', payload: { id: product } });
       dispatch({
         type: 'products/getCalculatedPrice',
-        payload: { days, date },
+        payload: { days, period: bookDates },
       });
       setConfirmModal(true);
     } else {
@@ -34,6 +42,7 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
     }
   };
 
+  // Reset selected product after modal close
   useEffect(() => {
     if (!visible) {
       bookForm.resetFields();
@@ -41,11 +50,12 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
     }
   }, [visible, bookForm, dispatch]);
 
-  // getProductById
+  // Get single product by Code
   const getProductById = (code) => {
     dispatch({ type: 'products/getProductById', payload: { id: code } });
   };
 
+  // Previous Date disabled
   const disabledDate = (current) => {
     // Can not select days before today and today
     return moment().add(-1, 'days') >= current;

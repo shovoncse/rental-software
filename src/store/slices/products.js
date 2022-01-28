@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { loadState } from 'utils/localStorage';
+import moment from 'moment';
 
 // Demo Data
 import ProductData from 'data/Data.json';
@@ -10,11 +11,13 @@ const persistedState = loadState();
 // Product Slice
 const productsSlice = createSlice({
   name: 'products',
-  initialState: persistedState.products || {
-    products: ProductData,
-    selected: null,
-    bookings: [],
-  },
+  initialState: persistedState
+    ? persistedState.products
+    : {
+        products: ProductData,
+        selected: null,
+        bookings: [],
+      },
   reducers: {
     // Get Single Product
     getProductById: (state, action) => {
@@ -28,15 +31,15 @@ const productsSlice = createSlice({
       let selected = state.bookings.find((item) => item.code === id);
       state.selected = selected;
     },
-    // Price Calc
+    // Price Calculation
     getCalculatedPrice: (state, action) => {
-      let { days, date } = action.payload;
+      let { days, period } = action.payload;
       // Check existance
       let estPrice = days * state.selected.price;
 
       state.selected.estPrice = estPrice;
       state.selected.bookingsDays = days;
-      state.selected.bookingsDates = date;
+      state.selected.bookingsDates = period;
     },
 
     // Update Selected
@@ -52,7 +55,7 @@ const productsSlice = createSlice({
     resetSelected: (state) => {
       state.selected = null;
     },
-    // Add to bookings
+    // Booking
     productBooking: (state) => {
       let index = state.products.findIndex(
         (item) => item.code === state.selected.code
@@ -79,7 +82,6 @@ const productsSlice = createSlice({
     },
     updateProducts: (state, action) => {
       let { date } = action.payload;
-      console.log(date);
 
       // Mileage
 

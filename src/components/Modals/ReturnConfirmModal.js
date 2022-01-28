@@ -5,9 +5,9 @@ import Swal from 'sweetalert2';
 
 const ReturnConfirmModal = ({ visible, setReturnModal, setConfirmModal }) => {
   let selected = useSelector((state) => state.products.selected) || '';
-
   let dispatch = useDispatch();
 
+  // Confirm
   const handleReturnConfirm = () => {
     dispatch({ type: 'products/returnProduct' });
     Swal.fire('Sucessfull', 'Your Return is successfull', 'success');
