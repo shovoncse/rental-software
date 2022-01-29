@@ -107,7 +107,7 @@ const ProductTable = ({ setBookModal, setReturnModal }) => {
           <Row justify="end" gutter={[16, 8]}>
             <Col>
               <Button
-                type="primary"
+                className={styles.bgBlue}
                 onClick={() => {
                   setBookModal(true);
                 }}
