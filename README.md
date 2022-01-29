@@ -35,10 +35,10 @@ A web applications as a Front End Technical Project
   [Jest](https://jestjs.io/), [Sweet Alert](https://sweetalert2.github.io/),
   [Webpack v5](https://webpack.js.org/)
 
-## Documentation (Adding soon ...)
+## Documentation
 
 - [Overview](docs/overview.md): A short overview of the included tools
-- [**Commands**](docs/commands.md): Getting the most out of this boilerplate
+- [Commands](docs/commands.md): Getting the most out of this boilerplate
 - [Testing](docs/testing.md): How to work with the built-in test harness
 
 ## Contributor

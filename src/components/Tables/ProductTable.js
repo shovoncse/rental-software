@@ -10,17 +10,14 @@ const ProductTable = ({ setBookModal, setReturnModal }) => {
   const [page, setPage] = useState(1);
   const [val, setVal] = useState('');
 
-  const filterVals = useCallback(
-    (e) => {
-      const currValue = e.target.value.toLowerCase();
-      setVal(currValue);
-      const filteredVals = products.filter((entry) =>
-        entry.name.toLowerCase().includes(currValue)
-      );
-      setProducts(filteredVals);
-    },
-    [products]
-  );
+  const filterVals = useCallback((e) => {
+    const currValue = e.target.value.toLowerCase();
+    setVal(currValue);
+    const filteredVals = products.filter((entry) =>
+      entry.name.toLowerCase().includes(currValue)
+    );
+    setProducts(filteredVals);
+  }, []);
 
   useEffect(() => {
     setProducts(productsData);
