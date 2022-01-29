@@ -1,7 +1,7 @@
 
 
 # Rental Software
-
+A web applications as a Front End Technical Project
 ## Live Url
 [Rental Software](https://lr-rental.netlify.app)
 
@@ -25,14 +25,21 @@
 - Easy to use code structure
 - Functionality Fully Scaleable 
 - Runtime product update using hook
-  
+
+## Tech Stack
+
+- [React](https://reactjs.org/), [Redux](https://react-redux.js.org/),
+  [Ant Design](https://ant.design/), [Moment JS](https://momentjs.com/)
+- [Tailwind](https://tailwindcss.com/), [Babel](https://babeljs.io/),
+  [ESLint](https://eslint.org/), [Prettier](https://prettier.io/),
+  [Jest](https://jestjs.io/), [Sweet Alert](https://sweetalert2.github.io/),
+  [Webpack v5](https://webpack.js.org/)
+
 ## Documentation (Adding soon ...)
 
 - [Overview](docs/overview.md): A short overview of the included tools
 - [**Commands**](docs/commands.md): Getting the most out of this boilerplate
 - [Testing](docs/testing.md): How to work with the built-in test harness
-- [Styling](docs/style.md): How to work with the CSS tooling
-- [**Troubleshooting**](docs/gotchas.md): Solutions to common problems faced by developers.
 
 ## Contributor
 [Shovon](https://github.com/shovoncse)
