@@ -10,6 +10,7 @@ const ReturnModal = ({ visible, setReturnModal, setConfirmModal }) => {
   const { Option } = Select;
   const [returnForm] = Form.useForm();
 
+  // Returning product
   const handleReturnOk = ({ mileage }) => {
     dispatch({ type: 'products/updateSelected', payload: { mileage } });
     setConfirmModal(true);

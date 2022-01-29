@@ -24,6 +24,7 @@
 - Linters and prettier added
 - Easy to use code structure
 - Functionality Fully Scaleable 
+- Runtime product update using hook
   
 ## Documentation (Adding soon ...)
 

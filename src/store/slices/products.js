@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { loadState } from 'utils/localStorage';
 import moment from 'moment';
-
 // Demo Data
 import ProductData from 'data/Data.json';
 
@@ -34,8 +33,9 @@ const productsSlice = createSlice({
     // Price Calculation
     getCalculatedPrice: (state, action) => {
       let { days, period } = action.payload;
-      // Check existance
-      let estPrice = days * state.selected.price;
+      // price * day - discount
+      let estPrice =
+        days * state.selected.price - (state.selected.discount || 0);
 
       state.selected.estPrice = estPrice;
       state.selected.bookingsDays = days;
@@ -44,12 +44,8 @@ const productsSlice = createSlice({
 
     // Update Selected
     updateSelected: (state, action) => {
-      let { mileage, code } = action.payload;
-      if (code) {
-        state.selected = state.bookings.find((item) => item.code === code);
-      } else {
-        state.selected.mileageUsed = mileage;
-      }
+      let { mileage } = action.payload;
+      state.selected.mileageUsed = mileage;
     },
     // Reset Selected
     resetSelected: (state) => {
@@ -76,18 +72,85 @@ const productsSlice = createSlice({
       );
       if (index !== -1) {
         state.products[mainIndex].availability = true;
+        state.products[mainIndex].mileage += state.selected.mileageUsed;
         state.bookings.splice(index, 1);
         state.selected = null;
       }
     },
+    // Every day booking product update
     updateProducts: (state, action) => {
-      let { date } = action.payload;
+      let { today } = action.payload;
 
-      // Mileage
+      // Main function
+      const update = (item, nthDay = 1) => {
+        // Mileage update
+        item.mileage += 10 * nthDay;
+        // Durability update
+        if (item.type === 'plain') {
+          item.durability -= 1 * nthDay;
+        } else {
+          item.durability -= 2 * nthDay;
+        }
+        // Need to fix or not
+        if (item.durability >= item.max_durability) {
+          item.needing_repair = true;
+        }
+        return item;
+      };
 
-      // Durability
+      // Date difference mesurement function
+      const dateDiff = (day1, day2) => {
+        const date1 = new Date(day1);
+        const date2 = new Date(day2);
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
+        return diffDays;
+      };
+
+      // Main Product Db update
+      const mainProductUpdate = (m, d, r, code) => {
+        const mainIndex = state.products.findIndex(
+          (mainItem) => mainItem.code === code
+        );
+        const targetProduct = state.products[mainIndex];
+        targetProduct.durability = d;
+        targetProduct.needing_repair = r;
+        targetProduct.mileage = m;
+      };
+      // Check all booked products
+      // Mileage update
+      // Durability update
       // Need to fix or not
+      state.bookings.map((item) => {
+        if (item.lastUpdate) {
+          const lastUpdate = item.lastUpdate;
+          // Check diff from last update (today-lastupdate)
+          let dif = dateDiff(lastUpdate, today);
+          let { mileage, durability, needing_repair } = update(item, dif);
+
+          item.mileage = mileage;
+          item.durability = durability;
+          item.needing_repair = needing_repair;
+
+          // update main db
+          mainProductUpdate(mileage, durability, needing_repair, item.code);
+        } else {
+          // First update
+          // Check diff from booking day (today-rentday)
+          let bookDay = item.bookingsDates[0];
+          let dif = dateDiff(bookDay, today);
+          let { mileage, durability, needing_repair } = update(item, dif);
+
+          item.mileage = mileage;
+          item.durability = durability;
+          item.needing_repair = needing_repair;
+          item.lastUpdate = today;
+
+          // update main db
+          mainProductUpdate(mileage, durability, needing_repair, item.code);
+        }
+      });
     },
   },
 });

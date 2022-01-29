@@ -125,7 +125,7 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
               </Form.Item>
               <Form.Item
                 name="date"
-                label="Selete Date"
+                label="Rental Period"
                 className="font-semibold"
                 rules={[
                   {
@@ -146,17 +146,25 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
                 </List.Item>
                 <List.Item key={2}>
                   <span className="font-semibold">Mileage:</span>{' '}
-                  {selected.mileage || '0'}
-                </List.Item>
-                <List.Item key={3}>
+                  {selected.mileage || '0'} <br />
                   <span className="font-semibold">Price:</span> {selected.price}
-                </List.Item>
-                <List.Item key={4}>
+                  <br />
                   <span className="font-semibold">Min Rent:</span> For{' '}
                   <span className="font-bold">
                     {selected.minimum_rent_period}
                   </span>{' '}
                   Day(s)
+                </List.Item>
+                <List.Item key={3}>
+                  {selected.needing_repair ? (
+                    <span className="text-sm text-red-500 font-bold">
+                      Need to Repair
+                    </span>
+                  ) : (
+                    <span className="text-sm font-bold text-green-700">
+                      Repairing Not Necessary
+                    </span>
+                  )}
                 </List.Item>
               </List>
             ) : null}

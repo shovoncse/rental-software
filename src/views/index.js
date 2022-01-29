@@ -20,8 +20,9 @@ const Products = () => {
   const [returnConfirmModalVisible, setReturnConfirmModalVisible] =
     useState(false);
 
-  const date = moment().format('l');
-  ProductUpdate(date);
+  // Update Product Everyday
+  const today = moment().format('l');
+  ProductUpdate(today);
 
   return (
     <>
