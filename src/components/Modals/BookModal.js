@@ -1,18 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col, Modal, Select, DatePicker, Form, List } from 'antd';
+import { Row, Col, Modal, Form } from 'antd';
 import moment from 'moment';
 import Swal from 'sweetalert2';
+import BookForm from 'components/Forms/BookForm';
+import ProductDetails from 'components/Others/ProductDetails';
+import ConfirmDialogue from 'components/Others/ConfirmDialogue';
 
-const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
+const BookModal = ({ visible, setBook }) => {
   let dispatch = useDispatch();
-  // Select from state
-  let products = useSelector((state) => state.products.products);
-  let selected = useSelector((state) => state.products.selected) || '';
-
-  const { Option } = Select;
-  const { RangePicker } = DatePicker;
+  const [confirm, setConfirm] = useState(false);
   const [bookForm] = Form.useForm();
+
+  // Select from state
+  let selected = useSelector((state) => state.products.selected) || '';
 
   // Click to OK button
   const handleBookOk = ({ product, date }) => {
@@ -32,7 +33,7 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
         type: 'products/getCalculatedPrice',
         payload: { days, period: bookDates },
       });
-      setConfirmModal(true);
+      setConfirm(true);
     } else {
       Swal.fire(
         'Sorry!',
@@ -40,6 +41,28 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
         'warning'
       );
     }
+  };
+
+  // Booking Function
+  const handleBookConfirm = () => {
+    // Booking Action
+    dispatch({ type: 'products/productBooking' });
+    // Alert
+    Swal.fire('Sucessfull', 'Your booking is successfull', 'success');
+    // Modals Hide
+    setConfirm(false);
+    setBook(false);
+  };
+
+  const handleBook = () => {
+    bookForm
+      .validateFields()
+      .then((values) => {
+        handleBookOk(values);
+      })
+      .catch((info) => {
+        console.log('Validate Failed:', info);
+      });
   };
 
   // Reset selected product after modal close
@@ -50,17 +73,6 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
     }
   }, [visible, bookForm, dispatch]);
 
-  // Get single product by Code
-  const getProductById = (code) => {
-    dispatch({ type: 'products/getProductById', payload: { id: code } });
-  };
-
-  // Previous Date disabled
-  const disabledDate = (current) => {
-    // Can not select days before today and today
-    return moment().add(-1, 'days') >= current;
-  };
-
   return (
     <>
       <Modal
@@ -69,107 +81,22 @@ const BookModal = ({ visible, setBookModal, setConfirmModal }) => {
         title="Book a product"
         okText="Yes"
         cancelText="no"
-        onCancel={() => setBookModal(false)}
-        onOk={() => {
-          bookForm
-            .validateFields()
-            .then((values) => {
-              handleBookOk(values);
-            })
-            .catch((info) => {
-              console.log('Validate Failed:', info);
-            });
-        }}
+        onCancel={confirm ? () => setConfirm(false) : () => setBook(false)}
+        onOk={confirm ? () => handleBookConfirm() : () => handleBook()}
       >
-        <Row justify="space-between">
-          <Col span={10}>
-            <Form
-              form={bookForm}
-              layout="vertical"
-              name="form_in_modal"
-              initialValues={{
-                modifier: 'public',
-              }}
-            >
-              <Form.Item
-                name="product"
-                label="Select Product"
-                className="font-semibold"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please select the product!',
-                  },
-                ]}
-              >
-                <Select
-                  showSearch
-                  style={{ width: 200 }}
-                  placeholder="Search to Select"
-                  optionFilterProp="children"
-                  filterOption={(input, option) =>
-                    option.children
-                      .toLowerCase()
-                      .indexOf(input.toLowerCase()) >= 0
-                  }
-                  onChange={getProductById}
-                >
-                  {products
-                    .filter((item) => item.availability && !item.needing_repair)
-                    .map((data, index) => (
-                      <Option value={data.code} key={index}>
-                        {data.name}
-                      </Option>
-                    ))}
-                </Select>
-              </Form.Item>
-              <Form.Item
-                name="date"
-                label="Rental Period"
-                className="font-semibold"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please select the date range',
-                  },
-                ]}
-              >
-                <RangePicker disabledDate={disabledDate} />
-              </Form.Item>
-            </Form>
-          </Col>
-          <Col span={10}>
-            {selected ? (
-              <List size="small" bordered className="bg-sky-100">
-                <List.Item key={1}>
-                  <span className="text-sm font-bold">{selected.name}</span>
-                </List.Item>
-                <List.Item key={2}>
-                  <span className="font-semibold">Mileage:</span>{' '}
-                  {selected.mileage || '0'} <br />
-                  <span className="font-semibold">Price:</span> {selected.price}
-                  <br />
-                  <span className="font-semibold">Min Rent:</span> For{' '}
-                  <span className="font-bold">
-                    {selected.minimum_rent_period}
-                  </span>{' '}
-                  Day(s)
-                </List.Item>
-                <List.Item key={3}>
-                  {selected.needing_repair ? (
-                    <span className="text-sm text-red-500 font-bold">
-                      Need to Repair
-                    </span>
-                  ) : (
-                    <span className="text-sm font-bold text-green-700">
-                      Repairing Not Necessary
-                    </span>
-                  )}
-                </List.Item>
-              </List>
-            ) : null}
-          </Col>
-        </Row>
+        {!confirm ? (
+          <Row justify="space-between">
+            <Col span={10}>
+              {/* Booking Form */}
+              <BookForm name={bookForm} />
+            </Col>
+            <Col span={10}>
+              {selected ? <ProductDetails selected={selected} /> : null}
+            </Col>
+          </Row>
+        ) : (
+          <ConfirmDialogue selected={selected} />
+        )}
       </Modal>
     </>
   );

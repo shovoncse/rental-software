@@ -3,13 +3,15 @@ import { useSelector } from 'react-redux';
 import { Row, Col, Table, Input, Button } from 'antd';
 import styles from './Table.module.css';
 
-const ProductTable = ({ setBookModal, setReturnModal }) => {
+const ProductTable = ({ setBook, setReturn }) => {
   let productsData = useSelector((state) => state.products.products);
   const [products, setProducts] = useState(productsData);
 
-  const [page, setPage] = useState(1);
-  const [val, setVal] = useState('');
+  useEffect(() => {
+    setProducts(productsData);
+  }, [productsData]);
 
+  // Search
   const filterVals = useCallback(
     (e) => {
       const currValue = e.target.value.toLowerCase();
@@ -22,10 +24,7 @@ const ProductTable = ({ setBookModal, setReturnModal }) => {
     [productsData]
   );
 
-  useEffect(() => {
-    setProducts(productsData);
-  }, [productsData]);
-
+  //Columns
   const columns = [
     {
       title: 'SL',
@@ -79,6 +78,9 @@ const ProductTable = ({ setBookModal, setReturnModal }) => {
     },
   ];
 
+  const [page, setPage] = useState(1);
+  const [val, setVal] = useState('');
+
   return (
     <>
       <Table
@@ -99,7 +101,7 @@ const ProductTable = ({ setBookModal, setReturnModal }) => {
             </Col>
             <Col xs={24} xxs={24} sm={12} md={6}>
               <Input
-                placeholder="Search for product"
+                placeholder="Search for products"
                 value={val}
                 onChange={filterVals}
               />
@@ -112,7 +114,7 @@ const ProductTable = ({ setBookModal, setReturnModal }) => {
               <Button
                 className={styles.bgBlue}
                 onClick={() => {
-                  setBookModal(true);
+                  setBook(true);
                 }}
               >
                 Book
@@ -122,7 +124,7 @@ const ProductTable = ({ setBookModal, setReturnModal }) => {
               <Button
                 className={styles.bgRed}
                 onClick={() => {
-                  setReturnModal(true);
+                  setReturn(true);
                 }}
               >
                 Return
