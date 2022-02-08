@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { Row, Col, Table, Input, Button } from 'antd';
+import { Row, Col, Table, Input } from 'antd';
 import styles from './Table.module.css';
+import Button from 'components/Buttons/Button';
 
 const ProductTable = ({ setBook, setReturn }) => {
   let productsData = useSelector((state) => state.products.products);
@@ -111,24 +112,10 @@ const ProductTable = ({ setBook, setReturn }) => {
         footer={() => (
           <Row justify="end" gutter={[16, 8]}>
             <Col>
-              <Button
-                className={styles.bgBlue}
-                onClick={() => {
-                  setBook(true);
-                }}
-              >
-                Book
-              </Button>
+              <Button type="blue" text="Book" click={() => setBook(true)} />
             </Col>
             <Col>
-              <Button
-                className={styles.bgRed}
-                onClick={() => {
-                  setReturn(true);
-                }}
-              >
-                Return
-              </Button>
+              <Button type="red" text="Return" click={() => setReturn(true)} />
             </Col>
           </Row>
         )}

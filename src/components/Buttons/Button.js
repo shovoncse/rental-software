@@ -3,14 +3,15 @@ import styles from './Button.module.css';
 
 const Button = ({ type, text, click }) => {
   return (
-    <Button
-      className={`${styles}.${type}`}
+    <div
+      data-testID="button"
+      className={styles.button + ' ' + styles[type]}
       onClick={() => {
         click();
       }}
     >
-      {text}
-    </Button>
+      <span>{text}</span>
+    </div>
   );
 };
 
