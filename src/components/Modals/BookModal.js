@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import BookForm from 'components/Forms/BookForm';
 import ProductDetails from 'components/Others/ProductDetails';
 import ConfirmDialogue from 'components/Others/ConfirmDialogue';
+import ErrorBoundary from 'utils/ErrorBoundary';
 
 const BookModal = ({ visible, setBook }) => {
   let dispatch = useDispatch();
@@ -88,14 +89,22 @@ const BookModal = ({ visible, setBook }) => {
           <Row justify="space-between">
             <Col span={10}>
               {/* Booking Form */}
-              <BookForm name={bookForm} />
+              <ErrorBoundary>
+                <BookForm name={bookForm} />
+              </ErrorBoundary>
             </Col>
             <Col span={10}>
-              {selected ? <ProductDetails selected={selected} /> : null}
+              {selected ? (
+                <ErrorBoundary>
+                  <ProductDetails selected={selected} />
+                </ErrorBoundary>
+              ) : null}
             </Col>
           </Row>
         ) : (
-          <ConfirmDialogue selected={selected} />
+          <ErrorBoundary>
+            <ConfirmDialogue selected={selected} />
+          </ErrorBoundary>
         )}
       </Modal>
     </>

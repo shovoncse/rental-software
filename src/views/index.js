@@ -12,7 +12,8 @@ import ProductTable from 'components/Tables/ProductTable';
 // Layout
 import Header from 'components/Wizard/Header/Header';
 import Footer from 'components/Wizard/Footer/Footer';
-
+// Errorboundary
+import ErrorBoundary from 'utils/ErrorBoundary';
 const Products = () => {
   // Update Product Everyday
   const today = moment().format('l');
@@ -24,22 +25,32 @@ const Products = () => {
     <>
       <Row justify="center">
         <Col xs={20} sm={20} md={16} lg={16} xl={16}>
-          <Header title="Rental Software" subTitle="Line Reflection Ltd." />
+          <ErrorBoundary>
+            <Header title="Rental Software" subTitle="Line Reflection Ltd." />
+          </ErrorBoundary>
         </Col>
         <Col xs={20} sm={20} md={16} lg={16} xl={16}>
-          <ProductTable
-            setBook={(val) => setBook(val)}
-            setReturn={(val) => setReturn(val)}
-          />
+          <ErrorBoundary>
+            <ProductTable
+              setBook={(val) => setBook(val)}
+              setReturn={(val) => setReturn(val)}
+            />
+          </ErrorBoundary>
         </Col>
         <Col span={24}>
-          <Footer credit="shovon" />
+          <ErrorBoundary>
+            <Footer credit="shovon" />
+          </ErrorBoundary>
         </Col>
       </Row>
 
       {/* Book & Return Modal */}
-      <BookModal visible={book} setBook={(val) => setBook(val)} />
-      <ReturnModal visible={returns} setReturn={(val) => setReturn(val)} />
+      <ErrorBoundary>
+        <BookModal visible={book} setBook={(val) => setBook(val)} />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <ReturnModal visible={returns} setReturn={(val) => setReturn(val)} />
+      </ErrorBoundary>
     </>
   );
 };

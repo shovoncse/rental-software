@@ -4,6 +4,7 @@ import { Row, Col, Modal, Form } from 'antd';
 import ProductDetails from 'components/Others/ProductDetails';
 import ConfirmDialogue from 'components/Others/ConfirmDialogue';
 import ReturnForm from 'components/Forms/ReturnForm';
+import ErrorBoundary from 'utils/ErrorBoundary';
 import Swal from 'sweetalert2';
 
 const ReturnModal = ({ visible, setReturn }) => {
@@ -57,14 +58,22 @@ const ReturnModal = ({ visible, setReturn }) => {
           <Row justify="space-between">
             <Col span={10}>
               {/* Return Form */}
-              <ReturnForm name={returnForm} />
+              <ErrorBoundary>
+                <ReturnForm name={returnForm} />
+              </ErrorBoundary>
             </Col>
             <Col span={12}>
-              {selected ? <ProductDetails selected={selected} /> : null}
+              {selected ? (
+                <ErrorBoundary>
+                  <ProductDetails selected={selected} />
+                </ErrorBoundary>
+              ) : null}
             </Col>
           </Row>
         ) : (
-          <ConfirmDialogue selected={selected} />
+          <ErrorBoundary>
+            <ConfirmDialogue selected={selected} />
+          </ErrorBoundary>
         )}
       </Modal>
     </>
