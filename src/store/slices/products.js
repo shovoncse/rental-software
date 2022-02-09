@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { loadState } from 'utils/localStorage';
-import moment from 'moment';
 // Demo Data
 import ProductData from 'data/Data.json';
 
