@@ -46,7 +46,7 @@ const ReturnForm = ({ name }) => {
           >
             {bookings.map((data, index) => (
               <Option value={data.code} key={index}>
-                {data.name}
+                {data.name ? data.name : ''}
               </Option>
             ))}
           </Select>

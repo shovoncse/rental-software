@@ -5,7 +5,9 @@ const ProductDetails = ({ selected }) => {
     <>
       <List size="small" bordered className="bg-sky-100">
         <List.Item key={1}>
-          <span className="text-sm font-bold">{selected.name}</span>
+          <span className="text-sm font-bold">
+            {selected.name || 'Not Found'}
+          </span>
         </List.Item>
         {selected.bookingsDays ? (
           <List.Item key={2}>

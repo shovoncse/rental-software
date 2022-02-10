@@ -1,0 +1,856 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductTable /> matches snapshot 1`] = `
+<div
+  className="ant-table-wrapper table"
+>
+  <div
+    className="ant-spin-nested-loading"
+  >
+    <div
+      className="ant-spin-container"
+    >
+      <div
+        className="ant-table ant-table-bordered"
+      >
+        <div
+          className="ant-table-title"
+        >
+          <div
+            className="ant-row ant-row-space-between"
+            style={Object {}}
+          >
+            <div
+              className="ant-col ant-col-xs-24 ant-col-sm-6"
+              style={Object {}}
+              xxs={24}
+            >
+              <h2
+                className="text-lg font-bold"
+              >
+                All Products
+              </h2>
+            </div>
+            <div
+              className="ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-6"
+              style={Object {}}
+              xxs={24}
+            >
+              <input
+                className="ant-input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Search for products"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="ant-table-container"
+        >
+          <div
+            className="ant-table-content"
+            onScroll={[Function]}
+            style={Object {}}
+          >
+            <table
+              style={
+                Object {
+                  "tableLayout": "auto",
+                }
+              }
+            >
+              <colgroup />
+              <thead
+                className="ant-table-thead"
+              >
+                <tr>
+                  <th
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    SL
+                  </th>
+                  <th
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Name
+                  </th>
+                  <th
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Code
+                  </th>
+                  <th
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Availability
+                  </th>
+                  <th
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Need to Repair
+                  </th>
+                  <th
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Durability
+                  </th>
+                  <th
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Mileage
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                className="ant-table-tbody"
+              >
+                <tr
+                  className="ant-table-row ant-table-row-level-0"
+                  onClick={[Function]}
+                  style={Object {}}
+                >
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    1
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Air Compressor 12 GAS
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold uppercase"
+                    >
+                      p1
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-green-500"
+                    >
+                      Available
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-green-500"
+                    >
+                      No
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    3000
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    0
+                  </td>
+                </tr>
+                <tr
+                  className="ant-table-row ant-table-row-level-0"
+                  onClick={[Function]}
+                  style={Object {}}
+                >
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    2
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Air Compressor 5 Electric
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold uppercase"
+                    >
+                      p2
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-green-500"
+                    >
+                      Available
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-green-500"
+                    >
+                      No
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    1500
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    0
+                  </td>
+                </tr>
+                <tr
+                  className="ant-table-row ant-table-row-level-0"
+                  onClick={[Function]}
+                  style={Object {}}
+                >
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    3
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Dia Blade 14 inch
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold uppercase"
+                    >
+                      p3
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-green-500"
+                    >
+                      Available
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-green-500"
+                    >
+                      No
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    40000
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    0
+                  </td>
+                </tr>
+                <tr
+                  className="ant-table-row ant-table-row-level-0"
+                  onClick={[Function]}
+                  style={Object {}}
+                >
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    4
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Copper Blade 5 inch
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold uppercase"
+                    >
+                      p4
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-red-500"
+                    >
+                      Not Available
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-red-500"
+                    >
+                      Yes
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    0
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    0
+                  </td>
+                </tr>
+                <tr
+                  className="ant-table-row ant-table-row-level-0"
+                  onClick={[Function]}
+                  style={Object {}}
+                >
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    5
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Copper Blade 5 inch
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold uppercase"
+                    >
+                      p5
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-red-500"
+                    >
+                      Not Available
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-red-500"
+                    >
+                      Yes
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    0
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    0
+                  </td>
+                </tr>
+                <tr
+                  className="ant-table-row ant-table-row-level-0"
+                  onClick={[Function]}
+                  style={Object {}}
+                >
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    6
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    Copper Blade 8 inch
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold uppercase"
+                    >
+                      p6
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-green-500"
+                    >
+                      Available
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    <p
+                      className="font-bold text-green-500"
+                    >
+                      No
+                    </p>
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    1500
+                  </td>
+                  <td
+                    className="ant-table-cell"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={Object {}}
+                  >
+                    0
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          className="ant-table-footer"
+        >
+          <div
+            className="ant-row ant-row-end"
+            style={
+              Object {
+                "marginBottom": -4,
+                "marginLeft": -8,
+                "marginRight": -8,
+                "marginTop": -4,
+              }
+            }
+          >
+            <div
+              className="ant-col"
+              style={
+                Object {
+                  "paddingBottom": 4,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "paddingTop": 4,
+                }
+              }
+            >
+              <div
+                className="button blue"
+                data-testid="button"
+                onClick={[Function]}
+              >
+                <span>
+                  Book
+                </span>
+              </div>
+            </div>
+            <div
+              className="ant-col"
+              style={
+                Object {
+                  "paddingBottom": 4,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "paddingTop": 4,
+                }
+              }
+            >
+              <div
+                className="button red"
+                data-testid="button"
+                onClick={[Function]}
+              >
+                <span>
+                  Return
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul
+        className="ant-pagination ant-table-pagination ant-table-pagination-right"
+        style={Object {}}
+        unselectable="unselectable"
+      >
+        <li
+          aria-disabled={true}
+          className="ant-pagination-prev ant-pagination-disabled"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={null}
+          title="Previous Page"
+        >
+          <button
+            className="ant-pagination-item-link"
+            disabled={true}
+            tabIndex={-1}
+            type="button"
+          >
+            <span
+              aria-label="left"
+              className="anticon anticon-left"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="left"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li
+          className="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex="0"
+          title={1}
+        >
+          <a
+            rel="nofollow"
+          >
+            1
+          </a>
+        </li>
+        <li
+          className="ant-pagination-item ant-pagination-item-2"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex="0"
+          title={2}
+        >
+          <a
+            rel="nofollow"
+          >
+            2
+          </a>
+        </li>
+        <li
+          className="ant-pagination-item ant-pagination-item-3"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex="0"
+          title={3}
+        >
+          <a
+            rel="nofollow"
+          >
+            3
+          </a>
+        </li>
+        <li
+          aria-disabled={false}
+          className="ant-pagination-next"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          tabIndex={0}
+          title="Next Page"
+        >
+          <button
+            className="ant-pagination-item-link"
+            disabled={false}
+            tabIndex={-1}
+            type="button"
+          >
+            <span
+              aria-label="right"
+              className="anticon anticon-right"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="right"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                />
+              </svg>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

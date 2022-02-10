@@ -3,7 +3,7 @@
 exports[`matches snapshot 1`] = `
 <div
   className="button undefined"
-  data-testID="button"
+  data-testid="button"
   onClick={[Function]}
 >
   <span>

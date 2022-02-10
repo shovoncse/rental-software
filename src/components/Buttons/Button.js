@@ -4,7 +4,7 @@ import styles from './Button.module.css';
 const Button = ({ type, text, click }) => {
   return (
     <div
-      data-testID="button"
+      data-testid="button"
       className={styles.button + ' ' + styles[type]}
       onClick={() => {
         click();

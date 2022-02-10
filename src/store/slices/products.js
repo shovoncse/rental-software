@@ -40,7 +40,6 @@ const productsSlice = createSlice({
       state.selected.bookingsDays = days;
       state.selected.bookingsDates = period;
     },
-
     // Update Selected
     updateSelected: (state, action) => {
       let { mileage } = action.payload;
@@ -62,6 +61,7 @@ const productsSlice = createSlice({
         state.selected = null;
       }
     },
+    // Return Product
     returnProduct: (state) => {
       let mainIndex = state.products.findIndex(
         (item) => item.code === state.selected.code

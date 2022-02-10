@@ -1,22 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { render, cleanup } from '@testing-library/react';
-import { Form } from 'antd';
 import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer';
-import BookForm from '../BookForm';
+import { Form } from 'antd';
+import ReturnForm from '../ReturnForm';
 import { store } from 'store/';
 import { Provider } from 'react-redux';
 
 afterEach(cleanup);
 
-describe('<BookForm />', () => {
+describe('<ReturnForm />', () => {
   const [bookForm] = Form.useForm();
   it('should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <Provider store={store}>
-        <BookForm name={bookForm}></BookForm>
+        <ReturnForm name={returnForm}></ReturnForm>
       </Provider>,
       div
     );
@@ -26,7 +26,7 @@ describe('<BookForm />', () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <BookForm name={bookForm}></BookForm>
+          <ReturnForm name={returnForm}></ReturnForm>
         </Provider>
       )
       .toJSON();

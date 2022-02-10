@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> matches snapshot 1`] = `
+<div
+  className="flex justify-center px-10"
+>
+  <p
+    className=""
+  >
+    Made with ❤️ by 
+  </p>
+</div>
+`;

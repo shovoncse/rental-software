@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductDetails /> matches snapshot 1`] = `
+<div
+  className="ant-list ant-list-sm ant-list-split ant-list-bordered bg-sky-100"
+>
+  <div
+    className="ant-spin-nested-loading"
+  >
+    <div
+      className="ant-spin-container"
+    >
+      <li
+        className="ant-list-item"
+      >
+        <span
+          className="text-sm font-bold"
+        >
+          Not Found
+        </span>
+      </li>
+      <li
+        className="ant-list-item ant-list-item-no-flex"
+      >
+        <span
+          className="font-semibold"
+        >
+          Mileage:
+        </span>
+         
+        0
+         
+        <br />
+        <span
+          className="font-semibold"
+        >
+          Price:
+        </span>
+         
+        <br />
+        <span
+          className="font-semibold"
+        >
+          Min Rent:
+        </span>
+         For
+         
+        <span
+          className="font-bold"
+        >
+          
+        </span>
+         
+        Day(s)
+      </li>
+      <li
+        className="ant-list-item"
+      >
+        <span
+          className="text-sm font-bold text-green-700"
+        >
+          Repairing Not Necessary
+        </span>
+      </li>
+    </div>
+  </div>
+</div>
+`;

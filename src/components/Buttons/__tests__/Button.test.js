@@ -6,12 +6,12 @@ import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer'
 
 afterEach(cleanup);
-it('renders without crashing', () => {
+it('should render without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<Button></Button>, div);
 });
 
-it('renders button correctly', () => {
+it('should render button correctly', () => {
   const { getByTestId } = render(<Button text="Click me"></Button>);
   getByTestId('button');
   expect(getByTestId('button')).toHaveTextContent('Click me');
