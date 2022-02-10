@@ -25,6 +25,9 @@ A web applications as a Front End Technical Project
 - Easy to use code structure
 - Functionality Fully Scaleable 
 - Runtime product update using hook
+- Handle errors with Sentry
+- Errorboundary added
+- Loglevel Logger integrated
 
 ## Tech Stack
 
@@ -33,8 +36,8 @@ A web applications as a Front End Technical Project
 - [Tailwind](https://tailwindcss.com/), [Babel](https://babeljs.io/),
   [ESLint](https://eslint.org/), [Prettier](https://prettier.io/),
   [Jest](https://jestjs.io/), [Sweet Alert](https://sweetalert2.github.io/),
-  [Webpack v5](https://webpack.js.org/)
-
+  [Webpack v5](https://webpack.js.org/) [Sentry](https://sentry.io/welcome/)
+  [Loglevel](https://www.npmjs.com/package/loglevel) [Loglevel Remote](https://www.npmjs.com/package/loglevel-plugin-remote/)
 ## Documentation
 
 - [Overview](docs/overview.md): A short overview of the included tools
