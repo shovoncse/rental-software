@@ -52,6 +52,7 @@ const ReturnModal = ({ visible, setReturn }) => {
         title="Return a product"
         okText="Yes"
         cancelText="no"
+        onCancel={confirm ? () => setConfirm(false) : () => setReturn(false)}
         footer={[
           <Button
             type="red"

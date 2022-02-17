@@ -83,6 +83,7 @@ const BookModal = ({ visible, setBook }) => {
         title="Book a product"
         okText="Yes"
         cancelText="no"
+        onCancel={confirm ? () => setConfirm(false) : () => setBook(false)}
         footer={[
           <Button
             type="red"
