@@ -7,6 +7,7 @@ import BookForm from 'components/Forms/BookForm';
 import ProductDetails from 'components/Others/ProductDetails';
 import ConfirmDialogue from 'components/Others/ConfirmDialogue';
 import ErrorBoundary from 'utils/ErrorBoundary';
+import Button from 'components/Buttons/Button';
 
 const BookModal = ({ visible, setBook }) => {
   let dispatch = useDispatch();
@@ -82,8 +83,20 @@ const BookModal = ({ visible, setBook }) => {
         title="Book a product"
         okText="Yes"
         cancelText="no"
-        onCancel={confirm ? () => setConfirm(false) : () => setBook(false)}
-        onOk={confirm ? () => handleBookConfirm() : () => handleBook()}
+        footer={[
+          <Button
+            type="red"
+            key={1}
+            text="No"
+            click={confirm ? () => setConfirm(false) : () => setBook(false)}
+          />,
+          <Button
+            type="blue"
+            key={2}
+            text="Yes"
+            click={confirm ? () => handleBookConfirm() : () => handleBook()}
+          />,
+        ]}
       >
         {!confirm ? (
           <Row justify="space-between">

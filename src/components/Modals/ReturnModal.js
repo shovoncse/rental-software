@@ -6,6 +6,7 @@ import ConfirmDialogue from 'components/Others/ConfirmDialogue';
 import ReturnForm from 'components/Forms/ReturnForm';
 import ErrorBoundary from 'utils/ErrorBoundary';
 import Swal from 'sweetalert2';
+import Button from 'components/Buttons/Button';
 
 const ReturnModal = ({ visible, setReturn }) => {
   let dispatch = useDispatch();
@@ -51,8 +52,20 @@ const ReturnModal = ({ visible, setReturn }) => {
         title="Return a product"
         okText="Yes"
         cancelText="no"
-        onCancel={confirm ? () => setConfirm(false) : () => setReturn(false)}
-        onOk={confirm ? () => handleReturnConfirm() : () => handleReturn()}
+        footer={[
+          <Button
+            type="red"
+            key={1}
+            text="No"
+            click={confirm ? () => setConfirm(false) : () => setReturn(false)}
+          />,
+          <Button
+            type="blue"
+            key={2}
+            text="Yes"
+            click={confirm ? () => handleReturnConfirm() : () => handleReturn()}
+          />,
+        ]}
       >
         {!confirm ? (
           <Row justify="space-between">
